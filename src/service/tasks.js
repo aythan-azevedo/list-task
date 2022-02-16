@@ -14,6 +14,14 @@ const createTask = async (status, task ) => {
   return createTask;
 };
 
+const getAll = async () => {
+  const getAllTasks = await tasks.getAllTasks();
+
+  return getAllTasks;
+};
+
+
 module.exports = {
-    createTask
+  createTask,
+  getAll,
 };

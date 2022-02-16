@@ -12,6 +12,14 @@ const createTask = async ({ status, task }) => {
   return result;
 };
 
+const getAllTasks = async () => {
+  const list = connection()
+  .then((db) => db.collection('list').find().toArray())
+  .then((result) => ({ tasks : result }));
+  return list;
+};
+
 module.exports = {
-  createTask
+  createTask,
+  getAllTasks,
 };
