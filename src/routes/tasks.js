@@ -8,10 +8,10 @@ router.post('/', taskController.createTask);
 
 router.get('/', taskController.getAll);
 
-router.get('/:id', taskController.getById);
+// router.get('/:id', taskController.getById);
 
-router.put('/:id', taskController.updateProd);
+// router.put('/:id', taskController.updatetask);
 
-router.delete('/:id', taskController.deleteProd);
+// router.delete('/:id', taskController.deletetask);
 
 module.exports = router;

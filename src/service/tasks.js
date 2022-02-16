@@ -1,8 +1,6 @@
 const validTask = require("../middlewares/validTask");
 const tasks = require("../model/tasks");
 
-
-
 const createTask = async (status, task ) => {
   const validation = await validTask.taskValid(status, task );
 
