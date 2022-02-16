@@ -18,8 +18,16 @@ const getAll = async () => {
   return getAllTasks;
 };
 
+const getById = async (id) => {
+  const validId = await validTask.idValidate(id);
+    if (validId !== true) return valid;
+    
+    const getId = await tasks.getById(id);
+    return getId;
+  };
 
 module.exports = {
   createTask,
   getAll,
+  getById
 };

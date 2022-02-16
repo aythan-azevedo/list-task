@@ -18,8 +18,19 @@ const getAll = async (req, res) => {
 }
 };
 
+const getById = async (req, res) => {
+  const { id } = req.params;
+  const getId = await tasks.getById(id);
+
+if (getId.err) {
+    return res.status(422).json(getId); 
+    }  
+
+  return res.status(200).json(getId[0]);
+};
+
 module.exports = {
   createTask,
   getAll,
-
+  getById
 };
