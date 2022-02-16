@@ -20,7 +20,7 @@ const getAll = async () => {
 
 const getById = async (id) => {
   const validId = await validTask.idValidate(id);
-    if (validId !== true) return valid;
+    if (validId !== true) return validId;
     
     const getId = await tasks.getById(id);
     return getId;
@@ -28,13 +28,14 @@ const getById = async (id) => {
 
   const updatetask = async (id, status, task) => {
     const validId = await validTask.idValidate(id);
-    if (validId !== true) return valid;
+    if (validId !== true) return validId;
     
     const validation = await validTask.taskValid(status, task );
 
     if (validation !== true) {
        return validation;
     }
+
 
     const update = tasks.updatetask(id, status, task);
     return update;
