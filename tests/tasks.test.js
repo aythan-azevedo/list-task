@@ -1,7 +1,7 @@
-const sinon = require('sinon');
 const { expect } = require('chai');
 const frisby = require('frisby');
 const { MongoClient } = require('mongodb');
+
 
 const mongoDbUrl = 'mongodb://127.0.0.1:27017';
 const url = 'http://localhost:3000';
@@ -70,6 +70,23 @@ describe('Insere uma nova task no BD', () => {
         const { message } = body.err;
         expect(error).equal('invalid_data');
         expect(message).equal('"status" and "task" needs to be a string ');
+      });
+  });
+  it('Será validado que  é possível criar uma task ', async () => {
+    await frisby
+      .post(`${url}/task/`, {
+        status: 'pendente',
+        task: 'criar testes unitarios',
+      })
+      .expect('status', 201)
+      .then((res) => {
+        let { body } = res;
+        body = JSON.parse(body);
+        const status = body.status;
+        const task = body.task;
+        expect(status).equal('pendente');
+        expect(task).equal('criar testes unitarios');
+        expect(body).haveOwnProperty('_id');
       });
   });
 });
