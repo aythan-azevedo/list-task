@@ -2,7 +2,7 @@ const { ObjectId } = require('mongodb');
 
 const taskValid = (status, task) => {
 
-  const statusType = typeof status === 'string';
+  const statusType = typeof task === 'string';
   const taskType = typeof status === 'string';
 
     if ( !statusType || !taskType ) { 
