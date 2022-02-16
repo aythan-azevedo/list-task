@@ -42,9 +42,18 @@ const updatetask = (id, status, task ) => {
 } 
 };
 
+const deleteTask = (id) => {
+  const deleteId = connection()
+  .then((db) => db.collection('list').deleteOne({ _id: ObjectId(id) }))
+  .then((result) => ({ result }));
+
+  return deleteId;
+};
+
 module.exports = {
   createTask,
   getAllTasks,
   getById,
-  updatetask
+  updatetask,
+  deleteTask
 };

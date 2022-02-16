@@ -40,9 +40,23 @@ const getById = async (id) => {
     return update;
   };
 
+  const deleteId = async (id) => {
+    const validId = await validTask.idValidate(id);
+    if (validId !== true) return valid;
+  
+    const exist = await tasks.getById(id);
+    if (exist.length === 0) {
+        return { err: { code: 'invalid_data', message: 'the task not exist' } };
+    }
+  
+  const del = await tasks.deleteTask(id);
+  return del;
+  };
+
 module.exports = {
   createTask,
   getAll,
   getById,
-  updatetask
+  updatetask,
+  deleteId
 };

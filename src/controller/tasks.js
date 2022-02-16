@@ -42,9 +42,21 @@ if (getId.err) {
   return res.status(200).json(getId);
 };
 
+
+const deleteTask = async (req, res) => {
+  const { id } = req.params;
+const delId = await tasks.deleteId(id);
+
+if (delId.err) {
+  return res.status(422).json(delId);
+}
+return res.status(200).json(delId);
+};
+
 module.exports = {
   createTask,
   getAll,
   getById,
-  updatetask
+  updatetask,
+  deleteTask,
 };

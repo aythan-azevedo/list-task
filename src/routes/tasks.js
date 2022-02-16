@@ -12,6 +12,6 @@ router.get('/:id', taskController.getById);
 
 router.put('/:id', taskController.updatetask);
 
-// router.delete('/:id', taskController.deletetask);
+router.delete('/:id', taskController.deleteTask);
 
 module.exports = router;
