@@ -1,8 +1,9 @@
 const { connection } = require('./connection');
+const { ObjectId } = require('mongodb');
 
 
 const createTask = async ({ status, task }) => {
-  const result = connection()
+  const result = await connection()
     .then((db) => db.collection('list').insertOne({ status, task }))
     .then(({ insertedId: _id }) => ({
       _id,
@@ -12,6 +13,47 @@ const createTask = async ({ status, task }) => {
   return result;
 };
 
+const getAllTasks = async () => {
+  const list = connection()
+  .then((db) => db.collection('list').find().toArray())
+  .then((result) => ({ tasks : result }));
+  return list;
+};
+
+const getById = async (id) => {
+  const idList = await connection().then((db) => db.collection('list').find(ObjectId(id))
+  .toArray())
+  .then((result) => result);
+  
+  return idList;
+};
+
+const updatetask = (id, status, task ) => {
+  const idList = connection().then((db) => db.collection('list')
+  .updateOne({ _id: ObjectId(id) },
+  { $set:
+    {
+    status,
+    task
+    } 
+  }));
+  if (idList) {
+  return { _id: id, status, task  }; 
+} 
+};
+
+const deleteTask = (id) => {
+  const deleteId = connection()
+  .then((db) => db.collection('list').deleteOne({ _id: ObjectId(id) }))
+  .then((result) => ({ result }));
+
+  return deleteId;
+};
+
 module.exports = {
-  createTask
+  createTask,
+  getAllTasks,
+  getById,
+  updatetask,
+  deleteTask
 };
