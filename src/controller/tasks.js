@@ -33,7 +33,7 @@ if (getId.err) {
 const updatetask = async (req, res) => {
   const { id } = req.params;
   const { status, task  } = req.body;
-  const getId = await productService.updateProd(id, status, task );
+  const getId = await tasks.updatetask(id, status, task );
 
 if (getId.err) {
     return res.status(422).json(getId); 

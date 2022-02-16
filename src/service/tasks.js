@@ -26,8 +26,23 @@ const getById = async (id) => {
     return getId;
   };
 
+  const updatetask = async (id, status, task) => {
+    const validId = await validTask.idValidate(id);
+    if (validId !== true) return valid;
+    
+    const validation = await validTask.taskValid(status, task );
+
+    if (validation !== true) {
+       return validation;
+    }
+
+    const update = tasks.updatetask(id, status, task);
+    return update;
+  };
+
 module.exports = {
   createTask,
   getAll,
-  getById
+  getById,
+  updatetask
 };

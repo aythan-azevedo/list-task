@@ -46,4 +46,5 @@ module.exports = {
   createTask,
   getAllTasks,
   getById,
+  updatetask
 };
