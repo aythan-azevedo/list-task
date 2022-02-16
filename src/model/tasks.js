@@ -28,6 +28,20 @@ const getById = async (id) => {
   return idList;
 };
 
+const updatetask = (id, status, task ) => {
+  const idList = connection().then((db) => db.collection('list')
+  .updateOne({ _id: ObjectId(id) },
+  { $set:
+    {
+    status,
+    task
+    } 
+  }));
+  if (idList) {
+  return { _id: id, status, task  }; 
+} 
+};
+
 module.exports = {
   createTask,
   getAllTasks,

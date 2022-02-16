@@ -29,8 +29,22 @@ if (getId.err) {
   return res.status(200).json(getId[0]);
 };
 
+
+const updatetask = async (req, res) => {
+  const { id } = req.params;
+  const { status, task  } = req.body;
+  const getId = await productService.updateProd(id, status, task );
+
+if (getId.err) {
+    return res.status(422).json(getId); 
+    }  
+
+  return res.status(200).json(getId);
+};
+
 module.exports = {
   createTask,
   getAll,
-  getById
+  getById,
+  updatetask
 };

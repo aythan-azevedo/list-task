@@ -10,7 +10,7 @@ router.get('/', taskController.getAll);
 
 router.get('/:id', taskController.getById);
 
-// router.put('/:id', taskController.updatetask);
+router.put('/:id', taskController.updatetask);
 
 // router.delete('/:id', taskController.deletetask);
 
