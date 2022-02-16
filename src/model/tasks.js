@@ -12,7 +12,7 @@ const createTask = async ({ status, task }) => {
     }));
   return result;
 };
-   // "test": "mocha ./tests/**/*$NAME*.test.js --exit",
+
 const getAllTasks = async () => {
   const list = connection()
   .then((db) => db.collection('task').find().toArray())
