@@ -22,8 +22,11 @@ e entrar
 ==> https://www.bitbaru.com/site/como-instalar-o-insomnia-no-linux-crie-solicitaes-http-e-obtenha-informaes-detalhadas/
 
 ==> é necessário instalar as dependências do node.js com o comando: `npm install node`
+
 ==>caso não tenha o mongodb instalado segue aqui um tutuorial==> https://docs.mongodb.com/manual/installation/
+
 ==> inicie o projeto com o comando `npm start` 
+
 ==>para rodar os testes `npm run test`
 ## criando um usuário 
 insira esse endereço no cliente que você está usando com a modalidade post.
