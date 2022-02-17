@@ -43,10 +43,10 @@ exemplo: ![com sucesso](./public/create.png)
 
 ![sucesso](./public/lista.png)
 
-==> se quiser uma task especifica coloque o id na url.
+==> se quiser uma task especifica coloque o id na url na modalidade put.
 `http://localhost:3000/task/_id`
 
-![sem sucesso](./public/getId.png)
+![sucesso](./public/getId.png)
 
 ==> para alterar uma task coloca o id na url e a informação editada no corpo da requisição.
 `http://localhost:3000/task/_id`
@@ -56,49 +56,13 @@ exemplo: ![com sucesso](./public/create.png)
 	"status" : "em andamento",
 	"task" : "criar testes de integração"
 }
-
-
-![sem sucesso](./public/getbyid.png)
-
-==> se o saldo da conta for maior que 10000 a api não permite mais depositos
-![sem sucesso](./public/10000.png)
-==>
-![sem sucesso](./public/+10000.png)
-
-## Transferir
-
-==> insira esse endereço no cliente que você está usando com a modalidade put.
-`http://localhost:3000/transfer`
-
-==> para tranferir é necessario o cpf do pagante e do recebedor assim como o valor:
-
-``` 
-{
-  "valor": 2000,
-  "pagador_cpf": 78945612305,
-  "beneficiado_cpf": 78945612306
-}
 ```
 
-![sucesso](./public/tranferencia.png)
-
-==> quando se tenta transferir mais do que se tem na conta a api impede e responde :
-![sem sucesso](./public/sem-fundos.png)
-![sem sucesso](./public/not-founds.png)
+![sucesso](./public/getbyid.png)
+==> para deletar uma task coloque o id na url na modalidade delete.
+`http://localhost:3000/task/_id`
 
 
-++>não tem nenhuma taxa para fazer transferencias ou depositos mas é possivel implementar isso em services.
-
-## extras
-==> você pode pegar todas as contas criadas pelo endpont com o verbo GET ao invez de post ou put:
-`http://localhost:3000/users`
-
-==> támbem é possivel deletar a conta através do endpoint com o id da conta:
-
-`http://localhost:3000/delete/{id fornecido pela sua maquina no cliente}`
-onde o id tem que ser adcionado como parâmetro na url
-![delete](./public/delete.png)
-
-==> por fim quero agradecer por ter chegado até aqui e comente no codigo dicas se achar que posso melhorar.
+![sucesso](./public/delete.png)
 
 ## OBRIGADO.
