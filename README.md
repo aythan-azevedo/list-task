@@ -37,17 +37,11 @@ e coloque o comando nele assim como no exemplo
 exemplo: ![com sucesso](./public/create.png)
 
 
-==> insira esse endereço no cliente que você está usando com a modalidade put.
-`http://localhost:3000/deposit`
-==> e coloque o comando nele assim como no exemplo com o id da conta que você criou anteriormente , valor do deposito e o cpf.
-``` 
-{	
-	"id": "{id fornecido pela sua maquina no cliente}",
-  "valor": 2000,
-  "cpf": 78945612305
-}
-```
-![sucesso](./public/deposito-sucesso.png)
+==> insira esse endereço no cliente que você está usando com a modalidade get.
+`http://localhost:3000/task`
+==> apenas isso ira trazer uma lista com todas as tasks.
+
+![sucesso](./public/list.png)
 
 ==> se o valor do deposito for negativo a api retorna a seguinte menssagem.
 
