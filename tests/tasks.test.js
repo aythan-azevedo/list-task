@@ -7,7 +7,7 @@ const mongoDbUrl = 'mongodb://127.0.0.1:27017';
 const url = 'http://localhost:3000';
 const invalidId = 969879
 
-describe('Insere uma nova task no BD', () => {
+describe('1-Insere uma nova task no BD', () => {
   let connection;
   let db;
 
@@ -88,7 +88,7 @@ describe('Insere uma nova task no BD', () => {
 });
 
 
-describe('2 -  listar os produtos', () => {
+describe('2 - listar os produtos', () => {
   let connection;
   let db;
 
