@@ -48,9 +48,17 @@ exemplo: ![com sucesso](./public/create.png)
 
 ![sem sucesso](./public/getId.png)
 
-==> se o valor for maior que 2000 a api retorna a seguinte mensagem.
+==> para alterar uma task coloca o id na url e a informação editada no corpo da requisição.
+`http://localhost:3000/task/_id`
 
-![sem sucesso](./public/>2000.png)
+``` 
+{
+	"status" : "em andamento",
+	"task" : "criar testes de integração"
+}
+
+
+![sem sucesso](./public/getbyid.png)
 
 ==> se o saldo da conta for maior que 10000 a api não permite mais depositos
 ![sem sucesso](./public/10000.png)
