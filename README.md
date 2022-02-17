@@ -23,6 +23,8 @@ e entrar
 
 ==> é necessário instalar as dependências do node.js com o comando: `npm install node`
 
+==> é necessário instalar as dependências do node.js com o comando: `npm install `
+
 ==>caso não tenha o mongodb instalado segue aqui um tutuorial==> https://docs.mongodb.com/manual/installation/
 
 ==> inicie o projeto com o comando `npm start` 
