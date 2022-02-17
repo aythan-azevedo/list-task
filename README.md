@@ -41,11 +41,12 @@ exemplo: ![com sucesso](./public/create.png)
 `http://localhost:3000/task`
 ==> apenas isso ira trazer uma lista com todas as tasks.
 
-![sucesso](./public/list.png)
+![sucesso](./public/lista.png)
 
-==> se o valor do deposito for negativo a api retorna a seguinte menssagem.
+==> se quiser uma task especifica coloque o id na url.
+`http://localhost:3000/task/_id`
 
-![sem sucesso](./public/deposito-negativo.png)
+![sem sucesso](./public/getId.png)
 
 ==> se o valor for maior que 2000 a api retorna a seguinte mensagem.
 
